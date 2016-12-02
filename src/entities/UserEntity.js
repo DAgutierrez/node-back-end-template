@@ -2,8 +2,10 @@
  * Created by diego on 12-10-16.
  */
 export default class User {
-    constructor() {
-
+    constructor(id) {
+        var u = US.get(id)
+        this.id = u.id;
+        this.name = u.name
     }
 
     static userIsValidInTheSystem(userExist)
@@ -13,6 +15,9 @@ export default class User {
         } else {
             return false;
         }
+    }
+    static isValid(){
+
     }
 
 }

@@ -7,7 +7,11 @@ Object.defineProperty(exports, "__esModule", {
  * Created by diego on 12-10-16.
  */
 class User {
-    constructor() {}
+    constructor(id) {
+        var u = US.get(id);
+        this.id = u.id;
+        this.name = u.name;
+    }
 
     static userIsValidInTheSystem(userExist) {
         if (userExist) {
@@ -16,6 +20,7 @@ class User {
             return false;
         }
     }
+    static isValid() {}
 
 }
 exports.default = User;

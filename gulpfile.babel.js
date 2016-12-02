@@ -3,6 +3,7 @@ import babel from 'gulp-babel';
 import nodemon from 'gulp-nodemon';
 import Cache from 'gulp-file-cache';
 import sourcemaps from 'gulp-sourcemaps';
+let apidoc = require('gulp-apidoc');
 
 
 gulp.task('copy', function () {
@@ -11,6 +12,13 @@ gulp.task('copy', function () {
     return stream;
 })
 
+
+gulp.task('doc', function(done){
+    apidoc({
+        src: "./src/routes/",
+        dest: "./document/"
+    },done);
+});
 
 gulp.task('compile',['copy'], function () {
     var stream = gulp.src('./src/**/**/*.js') // your ES2015 code
